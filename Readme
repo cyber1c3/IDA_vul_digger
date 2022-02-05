@@ -1,0 +1,19 @@
+适配了ida-7.5
+
+主要做了以下改进：
+1.给print函数的调用加了括号
+2.替换了7.4+版本以后的新API函数名，具体可见：https://www.hex-rays.com/products/ida/support/ida74_idapython_no_bc695_porting_guide.shtml#top
+	get_func_name 替换 GetFunctionName
+	get_func_attr 替换 GetFunctionAttr
+	prev_head 替换 PrevHead
+	print_insn_mnem 替换 GetMnem
+	print_operand 替换 GetOpnd
+	get_operand_value 替换 GetOperandValue
+	get_operand_type 替换 GetOpType
+
+后续打算加上以下几个功能
+1.log函数，把输出打印到文件中
+2.增多几个输入函数的检测，printf家族函数的检测
+3.支持arm架构
+4.支持mips架构
+5.支持检测简单UAF，free后不清空情况
